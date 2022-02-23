@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json",
                   "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
-        glue = "com/zerobank/step_definitions",
+        glue = "com/trycloud/step_definitions",
         dryRun = false,
         tags = "@smoke"
 )
