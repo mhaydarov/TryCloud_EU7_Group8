@@ -30,18 +30,6 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
-                case "chrome_73":
-                    ChromeOptions options = new ChromeOptions();
-                    String userHome = System.getProperty("user.home");
-                    String chromePath = "\\Downloads\\chrome-win\\chrome.exe";
-                    options.setBinary(userHome+chromePath);
-                    WebDriverManager.chromedriver().driverVersion("73.0.3683.68").setup();
-                    driver = new ChromeDriver(options);
-                    break;
-                case "chrome_73alt":
-                    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Merdan\\Downloads\\chrome-win\\chromedriver.exe");
-                    driver = new ChromeDriver();
-                    break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
