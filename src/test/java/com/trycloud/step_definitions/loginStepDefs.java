@@ -3,6 +3,7 @@ package com.trycloud.step_definitions;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
+import com.trycloud.utilities.WebUtilities;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,22 +18,17 @@ public class loginStepDefs {
         Driver.get().get(ConfigurationReader.get("url"));
     }
 
-    @When("user enters {string} into username input box")
-    public void user_enters_into_username_input_box(String username) {
-        username = ConfigurationReader.get("username");
-        loginPage.usernameInputBox.sendKeys(username);
-
-    }
-
-    @When("user enters {string} into password input box")
-    public void user_enters_into_password_input_box(String password) {
-        password=ConfigurationReader.get("password");
-       loginPage.passwordInputBox.sendKeys(password);
+    @When("user login with valid credentials")
+    public void user_login_with_valid_credentials() {
+        String username=ConfigurationReader.get("username");
+        String password=ConfigurationReader.get("password");
+        loginPage.logIn(username,password);
     }
 
     @Then("user should be log in dashboard")
     public void user_should_be_log_in_dashboard() {
-        loginPage.loginButton.click();
+
+        WebUtilities.waitFor(2);
         String currentUrl=Driver.get().getCurrentUrl();
 
         Assert.assertTrue("Verify that user is on dahsboard page",currentUrl.contains("dashboard"));
