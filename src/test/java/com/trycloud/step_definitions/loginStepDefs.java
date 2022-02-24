@@ -1,4 +1,4 @@
 package com.trycloud.step_definitions;
 
-public class temp {
+public class loginStepDefs {
 }
