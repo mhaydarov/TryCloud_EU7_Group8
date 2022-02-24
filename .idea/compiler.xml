@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TryCloud_EU7_Group8" target="11" />
+      <module name="TryCloud_EU7_Group8" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
