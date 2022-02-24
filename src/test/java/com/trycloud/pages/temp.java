@@ -2,9 +2,7 @@ package com.trycloud.pages;
 
 public class temp {
     public static void main(String[] args) {
-        System.out.println(" let's work togheter Ashfar");
-        System.out.println("Aysoltans work on process");
-        System.out.println(" let's work togheter AnaMaria Thursday");
+        System.out.println(" let's work togheter Ana-MARIA");
 
     }
 }
