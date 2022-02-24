@@ -35,4 +35,19 @@ public class loginStepDefs {
 
 
     }
+
+    @When("user login with invalid credentials")
+    public void user_login_with_invalid_credentials() {
+        String invalidUsername=ConfigurationReader.get("wrong_username");
+        String invalidPassword=ConfigurationReader.get("wrong_password");
+        loginPage.logIn(invalidUsername,invalidPassword);
+    }
+
+    @Then("user should see {string} warning message")
+    public void user_should_see_warning_message(String warningMessage) {
+
+        String actualWarningMessage = loginPage.warningMessageForInvalidCr.getText();
+
+        Assert.assertTrue("Verify that user sees warning message for login with invalid credentials",actualWarningMessage.equals(warningMessage));
+    }
 }
