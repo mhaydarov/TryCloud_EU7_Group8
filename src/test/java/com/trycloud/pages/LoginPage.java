@@ -16,6 +16,9 @@ public class LoginPage extends BasePage{
     @FindBy(css = "#submit-form")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
+    public WebElement warningMessageForInvalidCr;
+
     public void logIn(String username, String password){
         usernameInputBox.sendKeys(username);
         passwordInputBox.sendKeys(password);
