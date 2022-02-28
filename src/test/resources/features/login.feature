@@ -1,4 +1,4 @@
-@wip
+
 Feature:User should be able to login
 
   Background:
@@ -10,6 +10,10 @@ Feature:User should be able to login
 
   Scenario: User should not be able to login with invalid credentials
     When user login with invalid credentials
+    Then user should see "Wrong username or password." warning message
+  @wip
+  Scenario: Username input box should be case sensitive
+    When user insert "UsEr1" as username and valid password
     Then user should see "Wrong username or password." warning message
 
 

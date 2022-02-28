@@ -1,5 +1,6 @@
 package com.trycloud.step_definitions;
 
+
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
@@ -11,7 +12,8 @@ import org.junit.Assert;
 
 public class loginStepDefs {
 
-    LoginPage loginPage = new LoginPage();
+    LoginPage loginPage=new LoginPage();
+
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
@@ -49,5 +51,13 @@ public class loginStepDefs {
         String actualWarningMessage = loginPage.warningMessageForInvalidCr.getText();
 
         Assert.assertTrue("Verify that user sees warning message for login with invalid credentials",actualWarningMessage.equals(warningMessage));
+    }
+
+    @When("user insert {string} as username and valid password")
+    public void user_insert_as_username_and_valid_password(String insensitiveUserName) {
+
+        loginPage.logIn(insensitiveUserName,ConfigurationReader.get("password"));
+        Assert.assertTrue("Verify that wrong username warning message is displayed",loginPage.warningMessageForInvalidCr.isDisplayed());
+
     }
 }
