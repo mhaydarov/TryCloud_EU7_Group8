@@ -53,7 +53,7 @@ public class fileUploadStepDefs {
             System.out.println(cells.getText());
         }
 
-        Assert.assertTrue(allFileNames);
+
 
     }
 
