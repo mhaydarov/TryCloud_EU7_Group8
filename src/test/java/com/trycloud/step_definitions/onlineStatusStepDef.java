@@ -20,7 +20,7 @@ public class onlineStatusStepDef {
     @Then("user should see recent status is displayed under profile dropdown")
     public void user_should_see_recent_status_is_displayed_under_profile_dropdown() {
 
-        Assert.assertTrue("Verify that online status is visible under progile dorpdown", onlineStatusPage.setStatusButton.isDisplayed());
+        Assert.assertTrue("Verify that online status is visible under profile dorpdown", onlineStatusPage.setStatusButton.isDisplayed());
 
     }
 }
