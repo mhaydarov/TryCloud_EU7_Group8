@@ -5,8 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactsPage extends BasePage{
 
-   @FindBy(xpath="//ul[@id='appmenu']/*[@data-id='contacts']")
-    public WebElement contactsModule;
+
 
 
    @FindBy(xpath = "//button[@id='new-contact-button']")
