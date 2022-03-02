@@ -13,13 +13,7 @@ public abstract class BasePage {
 
 
 
-    public void navigateAppMenu(String module) {
 
-        String appmenuLocator = "//*[@id='appmenu']/*[@data-id='"+module+"']";
-
-        Driver.get().findElement(By.xpath(appmenuLocator)).click();
-
-    }
 
 
 }
