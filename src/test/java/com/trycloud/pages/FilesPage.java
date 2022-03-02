@@ -3,6 +3,8 @@ package com.trycloud.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class FilesPage extends BasePage{
 
     @FindBy (xpath = "//*[@id='quota']")
@@ -16,5 +18,8 @@ public class FilesPage extends BasePage{
 
     @FindBy (xpath = "//div[@class='hiddenuploadfield']")
     public WebElement inputDiv;
+
+    @FindBy (xpath = "//span[@class='innernametext']")
+    public List<WebElement> fileNames;
 
 }
