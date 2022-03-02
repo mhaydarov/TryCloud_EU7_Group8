@@ -1,13 +1,13 @@
 package com.trycloud.step_definitions;
 
 import com.trycloud.pages.DashboardPage;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class dashboardStepDefs {
 
     DashboardPage dashboardPage = new DashboardPage();
 
-    @Given("User navigates to {string} module")
+    @When("User navigates to {string} module")
     public void user_navigates_to_module(String module) {
 
         dashboardPage.navigateAppMenu(module);

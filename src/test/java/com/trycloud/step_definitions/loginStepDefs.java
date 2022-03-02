@@ -30,7 +30,7 @@ public class loginStepDefs {
     @Then("user should be log in dashboard")
     public void user_should_be_log_in_dashboard() {
 
-        WebUtilities.waitFor(2);
+
         String currentUrl=Driver.get().getCurrentUrl();
 
         Assert.assertTrue("Verify that user is on dahsboard page",currentUrl.contains("dashboard"));
