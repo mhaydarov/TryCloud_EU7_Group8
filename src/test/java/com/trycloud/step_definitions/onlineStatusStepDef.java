@@ -81,6 +81,69 @@ public class onlineStatusStepDef {
 
     }
 
+    @Then("user should see {string} and {string} near to it")
+    public void user_should_see_and_near_to_it(String expectedMainMessage, String expectedSideMessage) {
+
+        String fullMessage=expectedMainMessage+"-"+expectedSideMessage;
+        switch (fullMessage) {
+            case "In a meeting-an hour":
+                WebUtilities.waitFor(5);
+                String actualMainMessage = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][1]//span[2]")).getText();
+                String actualSideMessage = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][1]//span[3]")).getText();
+
+                Assert.assertTrue("Verify the main message of default status message is as expected", actualMainMessage.equals(expectedMainMessage));
+                Assert.assertTrue("Verify that side message of default status message is as expected", actualSideMessage.equals(expectedSideMessage));
+
+                break;
+            case "Commuting-30 minutes":
+                WebUtilities.waitFor(5);
+                String actualMainMessage1 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][2]//span[2]")).getText();
+                String actualSideMessage1 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][2]//span[3]")).getText();
+
+                Assert.assertTrue("Verify the main message of default status message is as expected", actualMainMessage1.equals(expectedMainMessage));
+                Assert.assertTrue("Verify that side message of default status message is as expected", actualSideMessage1.equals(expectedSideMessage));
+
+                break;
+
+            case "Working remotely-Today":
+
+                WebUtilities.waitFor(5);
+                String actualMainMessage2 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][3]//span[2]")).getText();
+                String actualSideMessage2 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][3]//span[3]")).getText();
+
+                Assert.assertTrue("Verify the main message of default status message is as expected", actualMainMessage2.equals(expectedMainMessage));
+                Assert.assertTrue("Verify that side message of default status message is as expected", actualSideMessage2.equals(expectedSideMessage));
+
+                break;
+
+            case "Out sick-Today":
+                WebUtilities.waitFor(5);
+                String actualMainMessage3 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][4]//span[2]")).getText();
+                String actualSideMessage3 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][4]//span[3]")).getText();
+
+                Assert.assertTrue("Verify the main message of default status message is as expected", actualMainMessage3.equals(expectedMainMessage));
+                Assert.assertTrue("Verify that side message of default status message is as expected", actualSideMessage3.equals(expectedSideMessage));
+
+                break;
+
+            case "Vacationing-Don't clear":
+
+                WebUtilities.waitFor(5);
+                String actualMainMessage4 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][5]//span[2]")).getText();
+                String actualSideMessage4 = Driver.get().findElement(By.xpath("//div[@class='predefined-status'][5]//span[3]")).getText();
+
+                Assert.assertTrue("Verify the main message of default status message is as expected", actualMainMessage4.equals(expectedMainMessage));
+                Assert.assertTrue("Verify that side message of default status message is as expected", actualSideMessage4.equals(expectedSideMessage));
+
+                break;
+
+
+
+
+        }
+
+    }
+
 
 
 }
