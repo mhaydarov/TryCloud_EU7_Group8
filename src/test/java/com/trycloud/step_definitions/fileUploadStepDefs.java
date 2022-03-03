@@ -25,10 +25,11 @@ public class fileUploadStepDefs {
     //files to upload
     File uploadedFile;
     int originalStorageUsed;
+    int newStorageUsed;
 
     //naming limits
-    int leftLimit = 48; // numbers
-    int rightLimit = 122; // letter 'z'
+    int leftLimit = 65; // numbers
+    int rightLimit = 90; // letter 'z'
     int targetStringLength;
 
 
@@ -37,7 +38,12 @@ public class fileUploadStepDefs {
     public void the_storage_is_empty() {
 
         WebUtilities.waitFor(1);
-        filesPage.selectAll.click();
+//        filesPage.selectAll.click();
+
+        for(WebElement el : filesPage.selectTestOnly){
+            el.click();
+        }
+
         WebUtilities.waitFor(1);
         filesPage.actionsButton.click();
         WebUtilities.waitFor(1);
@@ -55,41 +61,14 @@ public class fileUploadStepDefs {
     }
 
 
-
-    @When("User clicks + button and uploads {string}")
-    public void user_clicks_button_and_uploads(String file) {
-
-
-        WebUtilities.waitFor(2);
-
-        //just for demo
-        filesPage.buttonNew.click();
-        WebUtilities.waitFor(2);
-        filesPage.buttonNew.click();
-
-
-        //making browser show the hidden box
-        JavascriptExecutor js = (JavascriptExecutor)Driver.get();
-        js.executeScript("document.getElementsByClassName('hiddenuploadfield')[0].style.display = \"block\"");
-        WebUtilities.waitFor(2);
-
-        //uploading file
-        filesPage.input.sendKeys(file);
-
-        System.out.println("==========File uploading==========");
-
-        WebUtilities.waitFor(2);
-
-        uploadedFile = new File(file);
-
-    }
-
     //user uploads a file
     @When("user clicks + button and uploads a file")
     public void user_clicks_button_and_uploads_a_file(String file) {
 
         WebUtilities.waitFor(2);
 
+        originalStorageUsed = filesPage.checkStorage();
+
         //just for demo
         filesPage.buttonNew.click();
         WebUtilities.waitFor(2);
@@ -108,6 +87,8 @@ public class fileUploadStepDefs {
         WebUtilities.waitFor(2);
 
         uploadedFile = new File(file);
+
+        newStorageUsed = filesPage.checkStorage();
 
     }
 
@@ -126,6 +107,8 @@ public class fileUploadStepDefs {
 
 
         WebUtilities.waitFor(2);
+
+        originalStorageUsed = filesPage.checkStorage();
 
         //just for demo
         filesPage.buttonNew.click();
@@ -146,6 +129,7 @@ public class fileUploadStepDefs {
 
         uploadedFile = new File(pathAll);
 
+        newStorageUsed = filesPage.checkStorage();
 
     }
 
@@ -178,29 +162,19 @@ public class fileUploadStepDefs {
     @Then("the storage size should change accordingly")
     public void the_storage_size_should_change_accordingly() {
 
-        Driver.get().navigate().refresh();
-
         WebUtilities.waitFor(2);
-
-        System.out.println("=========Storage==========");
-        System.out.println("originalStorageUsed = " + originalStorageUsed);
-
-        originalStorageUsed = filesPage.checkStorage();
-        System.out.println("originalStorageUsed = " + originalStorageUsed);
-
-        String [] newStorageSize = filesPage.quota.getText().split(" ");
-        int newStorageUsed = Integer.parseInt(newStorageSize[0]);
-
-        WebUtilities.waitFor(2);
-
-        System.out.println("uploadedFile.length()/1024 = " + uploadedFile.length() / 1024);
-        System.out.println("newStorageSize = " + newStorageUsed);
-
 
         int uploadedFileSizeKB = (int) (uploadedFile.length()/1024);
 
-        Assert.assertEquals(uploadedFileSizeKB+originalStorageUsed,newStorageUsed);
+        System.out.println("originalStorageUsed = " + originalStorageUsed);
+        System.out.println("uploadedFileSizeKB = " + uploadedFileSizeKB);
+        System.out.println("newStorageUsed = " + newStorageUsed);
 
+        if(originalStorageUsed==newStorageUsed){
+            Assert.assertEquals(uploadedFileSizeKB,newStorageUsed);
+        }else{
+            Assert.assertEquals(uploadedFileSizeKB,newStorageUsed-originalStorageUsed);
+        }
 
         WebUtilities.waitFor(2);
 
@@ -239,7 +213,7 @@ public class fileUploadStepDefs {
 
         targetStringLength = folderProperties.get("char limit");
 
-        String folderName = "Test_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-5);
+        String folderName = "test_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-5);
 
         filesPage.inputFolder.sendKeys(folderName+ Keys.ENTER);
 

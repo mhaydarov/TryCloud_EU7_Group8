@@ -46,6 +46,9 @@ public class FilesPage extends BasePage{
     @FindBy (className = "item-delete")
     public WebElement actionsDeleteButton;
 
+    @FindBy (xpath = "//*[contains(text(),'test123_')]/../../../../td[@class='selection']")
+    public List<WebElement> selectTestOnly;
+
 
     public String generateName(int leftLimit, int rightLimit, int targetStringLength) {
 
