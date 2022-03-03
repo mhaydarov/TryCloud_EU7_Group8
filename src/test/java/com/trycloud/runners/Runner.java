@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "com/trycloud/step_definitions",
         dryRun = false,
         strict = true,
-        tags = "@contacts" //"@wip"
+        tags = "@CLOUD-268" //"@wip"
 )
 public class Runner {
 
