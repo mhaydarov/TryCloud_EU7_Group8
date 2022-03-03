@@ -14,16 +14,7 @@ import org.junit.Assert;
 
 public class contactsStepDefs extends BasePage {
 
-    //@Given("user login with valid credentials")
-   // public void user_login_with_valid_credentials() {
-       //  Driver.get().get(ConfigurationReader.get("url"));
 
-
-//        String username= ConfigurationReader.get("username");
-//        String password=ConfigurationReader.get("password");
-//        LoginPage loginPage=new LoginPage();
-//        loginPage.logIn(username,password);
-//    }
 
     @Given("the user is on the dashboard page")
     public void the_user_is_on_the_dashboard_page() {
@@ -33,28 +24,74 @@ public class contactsStepDefs extends BasePage {
 
     }
 
-    @When("user clicks on the Contacts module")
-    public void user_clicks_on_the_Contacts_module() {
-
+    @Given("user clicks on the Contacts module  on Dashboard page")
+    public void user_clicks_on_the_Contacts_module_on_Dashboard_page() {
         DashboardPage dashboardPage=new DashboardPage();
 
         WebUtilities.waitForClickablility(dashboardPage.contactsModule,3);
 
         dashboardPage.contactsModule.click();
+
+    }
+
+    @Then("new page opens with title Contacts")
+    public void new_page_opens_with_title_Contacts() {
+
+        String actualTitle=Driver.get().getTitle();
+
+        String expectedTitle="Contacts - Trycloud QA";
+
+        Assert.assertEquals(expectedTitle,actualTitle);
+
+    }
+
+    @When("user clicks on the New contact button")
+    public void user_clicks_on_the_New_contact_button() {
+        new ContactsPage().newContactButton.click();
+        WebUtilities.waitFor(3);
+
+    }
+
+    @Then("contact details section opens on the right")
+    public void contact_details_section_opens_on_the_right() {
         ContactsPage contactsPage=new ContactsPage();
-        WebUtilities.waitFor(2);
+        contactsPage.contactFullName.click();
 
-        String actual=contactsPage.newContactButton.getText();
-        String expected="New contact";
-        Assert.assertEquals(actual,expected);
+       String actualResult= contactsPage.contactFullName.getText();
 
+       WebUtilities.waitFor(3);
+        String expectedResult="New contact";
+
+        Assert.assertEquals(expectedResult,actualResult);
 
     }
-    @When("user clicks on the New contact option")
-    public void user_clicks_on_the_New_contact_option() {
+
+    @Then("user enters the contact details")
+    public void user_enters_the_contact_details() {
+
+        new ContactsPage().contactFullName.clear();
+        WebUtilities.waitFor(3);
+        new ContactsPage().contactFullName.sendKeys("Aysoltan");
+
+        new ContactsPage().emailBox.sendKeys("nana@example.com");
     }
+
+
+
     @Then("user creates a new contact")
     public void user_creates_a_new_contact() {
+
+        ContactsPage contactsPage=new ContactsPage();
+        contactsPage.searchButton.click();
+        contactsPage.searchBox.sendKeys("Aysoltan");
+
+        WebUtilities.waitFor(3);
+
+       String actualContact= contactsPage.newContact.getText();
+       String expectedContact="Aysoltan";
+       Assert.assertEquals(expectedContact,actualContact);
+
+
 
 
     }
@@ -65,9 +102,11 @@ public class contactsStepDefs extends BasePage {
     @When("user clicks on Delete option")
     public void user_clicks_on_Delete_option() {
 
+        new ContactsPage().actionMenu.click();
     }
     @Then("user deletes the selected contact")
     public void user_deletes_the_selected_contact() {
+
 
     }
 
