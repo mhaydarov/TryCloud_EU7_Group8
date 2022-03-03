@@ -8,6 +8,9 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//a[@class='user-status-menu-item__toggle']")
     public WebElement setStatusButton;
 
+    @FindBy(xpath = "//div[@class='set-status-modal__header'][1]")
+    public WebElement onlineStatusHeader;
+
 
 
 
