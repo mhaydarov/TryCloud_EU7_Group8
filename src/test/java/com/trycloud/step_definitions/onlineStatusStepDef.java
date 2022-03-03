@@ -60,6 +60,16 @@ public class onlineStatusStepDef {
         Assert.assertEquals("Verify that online status header is as expected",actualSetStatusMessageHeader,setStatusMessageHeader);
     }
 
+    @Then("user should see {string} message in message input box")
+    public void user_should_see_message_in_message_input_box(String expectedInputBoxMessage) {
+
+        WebUtilities.waitForVisibility(onlineStatusPage.setStatusMessageInputBox,4);
+        String inputBoxDeafultMessage = onlineStatusPage.setStatusMessageInputBox.getAttribute("placeholder");
+
+        Assert.assertTrue("Verify the default message is as expected",inputBoxDeafultMessage.equals(expectedInputBoxMessage));
+
+    }
+
 
 
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="Two more test cases are added">
+    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="One more test cases are added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/pages/OnlineStatusPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/pages/OnlineStatusPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" afterDir="false" />
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646337718694</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="One more test cases are added">
+      <created>1646338109878</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1646338109878</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,7 +220,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="loginFunc_Harun" />
+                        <option value="OnlineStatus_Harun" />
                       </list>
                     </value>
                   </entry>
@@ -239,6 +246,7 @@
     <MESSAGE value="Existence of set status button has been tested" />
     <MESSAGE value="last version" />
     <MESSAGE value="Two more test cases are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Two more test cases are added" />
+    <MESSAGE value="One more test cases are added" />
+    <option name="LAST_COMMIT_MESSAGE" value="One more test cases are added" />
   </component>
 </project>

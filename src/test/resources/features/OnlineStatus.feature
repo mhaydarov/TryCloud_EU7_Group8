@@ -28,7 +28,12 @@ Feature: As a user, I should be able to change my online status and set a status
       | away           |
       | invisible      |
       | dnd            |
-  @wip
+
   Scenario: User should be able to see "Status Message" header at the module
 
     Then user should see "Status message" as header
+
+  @wip
+  Scenario: User can view status message input box and "What's your status?" message in it
+
+    Then user should see "What's your status?" message in message input box

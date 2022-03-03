@@ -14,6 +14,8 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//div[@class='set-status-modal__header'][2]")
     public WebElement setStatusMessageHeader;
 
+    @FindBy(xpath = "//form[@class='custom-input__form']//input")
+    public WebElement setStatusMessageInputBox;
 
 
 
