@@ -17,7 +17,11 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//form[@class='custom-input__form']//input")
     public WebElement setStatusMessageInputBox;
 
+    @FindBy(xpath = "//span[@class='clear-at-select__label']")
+    public WebElement clearStatusMessage;
 
+    @FindBy(xpath = "//input[@class='multiselect__input']")
+    public WebElement clearStatusDropDown;
 
 
 

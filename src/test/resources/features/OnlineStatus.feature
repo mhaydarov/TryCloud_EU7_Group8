@@ -44,7 +44,7 @@ Feature: As a user, I should be able to change my online status and set a status
     Then Status Message input box should be interactable and user should be able to insert "Message" into it
 
 
-  @wip
+
   Scenario Outline: User can view default status message options in the same order as " In a meeting (bold and calendar icon beside it ) an hour(pale), Commuting(bold and bus icon beside it) - 30 minutes(pale), Working remotely(bold and building icon beside it)-Today(pale), Out sick(bold and sick emoji beside it) Today(pale), Vacationing(bold and tree emoji beside it)-Don't clear(pale)"
 
     Then user should see "<main message>" and "<side message>" near to it
@@ -57,3 +57,7 @@ Feature: As a user, I should be able to change my online status and set a status
     |Working remotely|Today|
     |Out sick|Today|
     |Vacationing|Don't clear|
+
+  @wip
+  Scenario: User can view the dropdown with the name "Clear status after" to select clear time range
+    Then user should see clear selection dropdown near the  "Clear status after" name

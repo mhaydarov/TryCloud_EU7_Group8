@@ -144,6 +144,20 @@ public class onlineStatusStepDef {
 
     }
 
+    @Then("user should see clear selection dropdown near the  {string} name")
+    public void user_should_see_clear_selection_dropdown_near_the_name(String expectedClearStatusMessage) {
+
+        WebUtilities.waitFor(5);
+        String actualClearStatusMessage = onlineStatusPage.clearStatusMessage.getText();
+
+        Assert.assertTrue("Verify that the message is as expected", actualClearStatusMessage.equals(expectedClearStatusMessage));
+        Assert.assertTrue("Verify clear status message dropdown is displayed",onlineStatusPage.clearStatusDropDown.isDisplayed());
+
+
+
+
+    }
+
 
 
 }
