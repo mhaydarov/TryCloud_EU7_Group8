@@ -3,6 +3,8 @@ package com.trycloud.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class OnlineStatusPage extends BasePage{
 
     @FindBy(xpath = "//a[@class='user-status-menu-item__toggle']")
@@ -22,6 +24,9 @@ public class OnlineStatusPage extends BasePage{
 
     @FindBy(xpath = "//input[@class='multiselect__input']")
     public WebElement clearStatusDropDown;
+
+    @FindBy(xpath = "//li[@class='multiselect__element']")
+    public List<WebElement> clearStatusDropDownOptions;
 
 
 

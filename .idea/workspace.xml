@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="New test cases are added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/pages/OnlineStatusPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/pages/OnlineStatusPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/OnlineStatus.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/OnlineStatus.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646349214242</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="New test cases are added">
+      <created>1646349909908</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646349909908</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
