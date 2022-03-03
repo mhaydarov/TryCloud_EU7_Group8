@@ -70,6 +70,17 @@ public class onlineStatusStepDef {
 
     }
 
+    @Then("Status Message input box should be interactable and user should be able to insert {string} into it")
+    public void status_Message_input_box_should_be_interactable_and_user_should_be_able_to_insert_into_it(String exampleMessage) {
+
+        WebUtilities.waitForVisibility(onlineStatusPage.setStatusMessageInputBox,4);
+        onlineStatusPage.setStatusMessageInputBox.sendKeys(exampleMessage);
+
+
+        Assert.assertTrue("Verify that Status Message input box is interactable", onlineStatusPage.setStatusMessageInputBox.isEnabled());
+
+    }
+
 
 
 }
