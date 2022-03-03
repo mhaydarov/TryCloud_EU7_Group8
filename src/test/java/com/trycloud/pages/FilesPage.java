@@ -36,5 +36,13 @@ public class FilesPage extends BasePage{
     @FindBy (xpath = "//*[@data-file]")
     public List<WebElement> dataFile;
 
+    @FindBy (xpath = "//*[@for='select_all_files']")
+    public WebElement selectAll;
+
+    @FindBy (id = "selectedActionsList")
+    public WebElement actionsButton;
+
+    @FindBy (className = "item-delete")
+    public WebElement actionsDeleteButton;
 
 }

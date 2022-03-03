@@ -7,7 +7,7 @@ public class dashboardStepDefs {
 
     DashboardPage dashboardPage = new DashboardPage();
 
-    @When("User navigates to {string} module")
+    @When("user navigates to {string} module")
     public void user_navigates_to_module(String module) {
 
         dashboardPage.navigateAppMenu(module);
