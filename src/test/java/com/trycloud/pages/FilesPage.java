@@ -1,9 +1,12 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.Driver;
+import com.trycloud.utilities.WebUtilities;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 public class FilesPage extends BasePage{
 
@@ -25,8 +28,6 @@ public class FilesPage extends BasePage{
     @FindBy (id = "file_upload_start")
     public WebElement input;
 
-
-
     @FindBy (xpath = "//div[@class='hiddenuploadfield']")
     public WebElement inputDiv;
 
@@ -44,5 +45,24 @@ public class FilesPage extends BasePage{
 
     @FindBy (className = "item-delete")
     public WebElement actionsDeleteButton;
+
+
+    public String generateName(int leftLimit, int rightLimit, int targetStringLength) {
+
+        Random random = new Random();
+        StringBuilder buffer = new StringBuilder(targetStringLength);
+        for (int i = 0; i < targetStringLength; i++) {
+            int randomLimitedInt = leftLimit + (int) (random.nextFloat() * (rightLimit - leftLimit + 1));
+            buffer.append((char) randomLimitedInt);
+        }
+        return buffer.toString();
+    }
+
+    public int checkStorage(){
+        Driver.get().navigate().refresh();
+        WebUtilities.waitFor(2);
+        String [] newStorageSize = quota.getText().split(" ");
+        return Integer.parseInt(newStorageSize[0]);
+    }
 
 }

@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.BrowserType;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class fileUploadStepDefs {
 
@@ -23,8 +24,13 @@ public class fileUploadStepDefs {
 
     //files to upload
     File uploadedFile;
-    String [] originalStorageSize;
     int originalStorageUsed;
+
+    //naming limits
+    int leftLimit = 48; // numbers
+    int rightLimit = 122; // letter 'z'
+    int targetStringLength;
+
 
     //CLEANING UP!!!
     @Given("the storage is empty")
@@ -40,11 +46,12 @@ public class fileUploadStepDefs {
         Driver.get().navigate().refresh();
         WebUtilities.waitFor(1);
 
-        //Storage size checks
-        originalStorageSize = filesPage.quota.getText().split(" ");
-        originalStorageUsed = Integer.parseInt(originalStorageSize[0]);
+//        //Storage size checks
+//        originalStorageSize = filesPage.quota.getText().split(" ");
+//        originalStorageUsed = Integer.parseInt(originalStorageSize[0]);
 
         //String storageUsedMeasure = originalStorageSize[1];
+
     }
 
 
@@ -178,6 +185,9 @@ public class fileUploadStepDefs {
         System.out.println("=========Storage==========");
         System.out.println("originalStorageUsed = " + originalStorageUsed);
 
+        originalStorageUsed = filesPage.checkStorage();
+        System.out.println("originalStorageUsed = " + originalStorageUsed);
+
         String [] newStorageSize = filesPage.quota.getText().split(" ");
         int newStorageUsed = Integer.parseInt(newStorageSize[0]);
 
@@ -192,26 +202,33 @@ public class fileUploadStepDefs {
         Assert.assertEquals(uploadedFileSizeKB+originalStorageUsed,newStorageUsed);
 
 
-//        //delete the uploaded file
-//        String xpathMenu = "//*[@data-file='"+uploadedFile.getName()+"']//*[@class='icon icon-more']";
-//        String xpathDelete = "//*[@data-file='"+uploadedFile.getName()+"']//*[@class=' action-delete-container']";
-//
-//        Driver.get().findElement(By.xpath(xpathMenu)).click();
-//
-//        WebUtilities.waitFor(2);
-//
-//        Driver.get().findElement(By.xpath(xpathDelete)).click();
-
-
         WebUtilities.waitFor(2);
 
 
     }
 
-    @When("User clicks + button and creates a folder and navigates into it")
-    public void user_clicks_button_and_creates_a_folder_and_navigates_into_it() {
+
+
+    @When("user clicks + button and creates a folder and opens it")
+    public void user_clicks_button_and_creates_a_folder_and_opens_it(Map<String, Integer> folderProperties) {
 
         WebUtilities.waitFor(2);
+
+//        boolean NameAllowed = false;
+//
+//        for(int i=0; i<folderName.length(); i++){
+//
+//            if(folderName.charAt(i)>=leftLimit && folderName.charAt(i) <=rightLimit){
+//                NameAllowed = true;
+//            }else{
+//                break;
+//            }
+//
+//        }
+//
+//        Assert.assertTrue("Verify allowed chars",NameAllowed);
+//
+//        Assert.assertTrue("Verify name length",folderName.length()<targetStringLength);
 
         System.out.println("=========Creating new folder==========");
 
@@ -219,14 +236,18 @@ public class fileUploadStepDefs {
         WebUtilities.waitFor(1);
         filesPage.createFolderButton.click();
         WebUtilities.waitFor(1);
-        String newFolderName = "Testing Folder";
-        filesPage.inputFolder.sendKeys(newFolderName+ Keys.ENTER);
+
+        targetStringLength = folderProperties.get("char limit");
+
+        String folderName = "Test_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-5);
+
+        filesPage.inputFolder.sendKeys(folderName+ Keys.ENTER);
 
         WebUtilities.waitFor(2);
 
         System.out.println("=========Going into the new folder created ==========");
 
-        Driver.get().findElement(By.xpath("//*[@data-file='"+newFolderName+"']")).click();
+        Driver.get().findElement(By.xpath("//*[@data-file='"+folderName+"']")).click();
 
         WebUtilities.waitFor(2);
 
