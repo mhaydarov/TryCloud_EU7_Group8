@@ -52,6 +52,13 @@ public class onlineStatusStepDef {
         Assert.assertTrue("Verify that online status options are visible",onlineStatus.isDisplayed());
 
     }
+    @Then("user should see {string} as header")
+    public void user_should_see_as_header(String setStatusMessageHeader) {
+        WebUtilities.waitForVisibility(onlineStatusPage.setStatusMessageHeader,3);
+        String actualSetStatusMessageHeader = onlineStatusPage.setStatusMessageHeader.getText();
+
+        Assert.assertEquals("Verify that online status header is as expected",actualSetStatusMessageHeader,setStatusMessageHeader);
+    }
 
 
 

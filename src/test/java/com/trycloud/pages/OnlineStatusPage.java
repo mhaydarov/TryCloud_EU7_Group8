@@ -11,6 +11,9 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//div[@class='set-status-modal__header'][1]")
     public WebElement onlineStatusHeader;
 
+    @FindBy(xpath = "//div[@class='set-status-modal__header'][2]")
+    public WebElement setStatusMessageHeader;
+
 
 
 

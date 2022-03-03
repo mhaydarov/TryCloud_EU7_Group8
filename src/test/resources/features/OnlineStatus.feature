@@ -17,12 +17,10 @@ Feature: As a user, I should be able to change my online status and set a status
 
     Then user shold see "Online Status" as header
 
-  @wip
+
   Scenario Outline: Online status options which are 'Online, Away, Do not disturb, Invisible' should be visible
 
     Then "<online options>" should be displayed
-
-
     Examples:
 
       | online options |
@@ -30,4 +28,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | away           |
       | invisible      |
       | dnd            |
+  @wip
+  Scenario: User should be able to see "Status Message" header at the module
 
+    Then user should see "Status message" as header
