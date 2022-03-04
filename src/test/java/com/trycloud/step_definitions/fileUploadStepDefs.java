@@ -37,26 +37,22 @@ public class fileUploadStepDefs {
     @Given("the storage is empty")
     public void the_storage_is_empty() {
 
-        WebUtilities.waitFor(1);
+        WebUtilities.waitFor(2);
 //        filesPage.selectAll.click();
 
-        for(WebElement el : filesPage.selectTestOnly){
-            el.click();
+        if(!filesPage.selectTestOnly.isEmpty()){
+            for(WebElement el : filesPage.selectTestOnly){
+                el.click();
+            }
+
+            WebUtilities.waitFor(3);
+            filesPage.actionsButton.click();
+            WebUtilities.waitFor(2);
+            filesPage.actionsDeleteButton.click();
+            WebUtilities.waitFor(2);
+            Driver.get().navigate().refresh();
+            WebUtilities.waitFor(1);
         }
-
-        WebUtilities.waitFor(1);
-        filesPage.actionsButton.click();
-        WebUtilities.waitFor(1);
-        filesPage.actionsDeleteButton.click();
-
-        Driver.get().navigate().refresh();
-        WebUtilities.waitFor(1);
-
-//        //Storage size checks
-//        originalStorageSize = filesPage.quota.getText().split(" ");
-//        originalStorageUsed = Integer.parseInt(originalStorageSize[0]);
-
-        //String storageUsedMeasure = originalStorageSize[1];
 
     }
 
@@ -151,11 +147,8 @@ public class fileUploadStepDefs {
         
         Assert.assertTrue("Verify file is uploaded",found);
 
-        WebUtilities.waitFor(2);
-
         System.out.println("==========File uploaded!==========");
 
-        WebUtilities.waitFor(2);
 
     }
 
@@ -176,7 +169,6 @@ public class fileUploadStepDefs {
             Assert.assertEquals(uploadedFileSizeKB,newStorageUsed-originalStorageUsed);
         }
 
-        WebUtilities.waitFor(2);
 
 
     }
@@ -188,22 +180,6 @@ public class fileUploadStepDefs {
 
         WebUtilities.waitFor(2);
 
-//        boolean NameAllowed = false;
-//
-//        for(int i=0; i<folderName.length(); i++){
-//
-//            if(folderName.charAt(i)>=leftLimit && folderName.charAt(i) <=rightLimit){
-//                NameAllowed = true;
-//            }else{
-//                break;
-//            }
-//
-//        }
-//
-//        Assert.assertTrue("Verify allowed chars",NameAllowed);
-//
-//        Assert.assertTrue("Verify name length",folderName.length()<targetStringLength);
-
         System.out.println("=========Creating new folder==========");
 
         filesPage.buttonNew.click();
@@ -213,7 +189,7 @@ public class fileUploadStepDefs {
 
         targetStringLength = folderProperties.get("char limit");
 
-        String folderName = "test_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-5);
+        String folderName = "test123_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-8);
 
         filesPage.inputFolder.sendKeys(folderName+ Keys.ENTER);
 
@@ -225,8 +201,33 @@ public class fileUploadStepDefs {
 
         WebUtilities.waitFor(2);
 
+    }
 
+    @When("user clicks + button and creates a doc file")
+    public void user_clicks_button_and_creates_a_doc_file(Map<String, Integer> fileProperties) {
 
+        WebUtilities.waitFor(2);
+
+        System.out.println("=========Creating new doc==========");
+
+        filesPage.buttonNew.click();
+        WebUtilities.waitFor(1);
+        filesPage.createDocButton.click();
+        WebUtilities.waitFor(1);
+
+        targetStringLength = fileProperties.get("char limit");
+
+        String fileName = "test123_" + filesPage.generateName(leftLimit,rightLimit,targetStringLength-8);
+
+        filesPage.inputFolder.sendKeys(fileName+ Keys.ENTER);
+
+        WebUtilities.waitFor(2);
+
+        System.out.println("=========Going into the new folder created ==========");
+
+        Driver.get().findElement(By.xpath("//*[@data-file='"+fileName+"']")).click();
+
+        WebUtilities.waitFor(2);
 
     }
 
@@ -239,7 +240,6 @@ public class fileUploadStepDefs {
 
         filesPage.createDocButton.click();
 
-
     }
 
     @Then("user should should see {string} warning message and the file should not upload")
@@ -250,9 +250,7 @@ public class fileUploadStepDefs {
         // implemeent locator for actualWarning
         String actualWarning = "";
 
-
         Assert.assertEquals("Verify warning message",expectedWarning,actualWarning);
-
 
         WebUtilities.waitFor(2);
 
