@@ -1,4 +1,4 @@
-package com.trycloud.pages;
+package com.trycloud.step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
