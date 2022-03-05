@@ -100,7 +100,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | invisible      |
       | dnd            |
 
-  @wip
+
   Scenario: User can view and click "Set status message" button with the blue background to set status message
 
     When user should insert "Example Message" into status message input box
@@ -108,6 +108,12 @@ Feature: As a user, I should be able to change my online status and set a status
     Then user should see "Example Message" on dashboard
 
 
+  @wip
+  Scenario: User can view  and click "Clear status message" button with the grey background to clear status message
+    When user should insert "Example Message" into status message input box
+    And user should see and click on Set status message button
+    And user clicks on  Clear status message button
+    Then user should see that previous "Example Message" is not displayed anymore
 
 
 

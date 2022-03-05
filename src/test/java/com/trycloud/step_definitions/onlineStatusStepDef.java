@@ -252,7 +252,11 @@ public class onlineStatusStepDef {
         WebUtilities.waitFor(3);
 
 
-        new Actions(Driver.get()).doubleClick(onlineStatusPage.setStatusMessageInputBox).perform();
+        onlineStatusPage.clearStatusMessageButton.click();
+        WebUtilities.waitFor(3);
+        onlineStatusPage.profileButton.click();
+        onlineStatusPage.setStatusButton.click();
+
         onlineStatusPage.setStatusMessageInputBox.sendKeys(exampleMessage);
 
 
@@ -282,6 +286,28 @@ public class onlineStatusStepDef {
         Assert.assertTrue("Verify that setted example message is displayed on profile menu",actualExampleMessage.equals(settedExampleMessage));
 
 
+
+    }
+
+    @When("user clicks on  Clear status message button")
+    public void user_clicks_on_Clear_status_message_button() {
+        WebUtilities.waitFor(2);
+
+        onlineStatusPage.profileButton.click();
+        onlineStatusPage.setStatusButton.click();
+
+        onlineStatusPage.clearStatusMessageButton.click();
+
+    }
+
+    @Then("user should see that previous {string} is not displayed anymore")
+    public void user_should_see_that_previous_is_not_displayed_anymore(String exampleMessage) {
+
+        onlineStatusPage.profileButton.click();
+        String actualMessage = onlineStatusPage.setStatusButton.getText();
+        System.out.println("actualMessage = " + actualMessage);
+
+        Assert.assertFalse("Verify that previous message id not displayed",actualMessage.equals(exampleMessage));
 
     }
 
