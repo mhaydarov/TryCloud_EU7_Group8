@@ -34,6 +34,11 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//span[@class='multiselect__single']")
     public WebElement recentClearStatusOption;
 
+    @FindBy(xpath = "//button[@class='action-item action-item--single header-close icon-close undefined undefined has-tooltip']")
+    public WebElement closingCross;
+
+
+
 
 
 

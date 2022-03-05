@@ -217,6 +217,31 @@ public class onlineStatusStepDef {
 
     }
 
+    @When("user clicks on {string} online option")
+    public void user_clicks_on_online_option(String statusKeyword) {
+        WebUtilities.waitFor(3);
+        WebElement onlineStatus= Driver.get().findElement(By.xpath("//label[@class='user-status-online-select__label icon-user-status-"+statusKeyword+"']"));
+
+        onlineStatus.click();
+
+        onlineStatusPage.closingCross.click();
+
+
+    }
+
+    @Then("{string} should be displayed under profile icon dropdown")
+    public void should_be_displayed_under_profile_icon_dropdown(String expectedOnlineStatus) {
+        WebUtilities.waitFor(3);
+
+        WebElement icon=Driver.get().findElement(By.xpath("//span[@class='user-status-menu-item__toggle-icon icon-user-status-"+expectedOnlineStatus+"']"));
+        String attributeOfDashboard = icon.getAttribute("class");
+        System.out.println("attributeOfDashboard = " + attributeOfDashboard);
+
+        Assert.assertTrue("Verify that selected online status is displayed on dashboard",attributeOfDashboard.contains(expectedOnlineStatus));
+
+
+    }
+
 
 
 

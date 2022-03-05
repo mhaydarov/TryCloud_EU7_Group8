@@ -72,7 +72,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | Today       |
       | This week   |
 
-  @wip
+
   Scenario: User can click every selection for clear time
     When user clicks on "Don't clear" option
     Then "Don't clear" should displayed on Clear status input box
@@ -86,6 +86,21 @@ Feature: As a user, I should be able to change my online status and set a status
     Then "This week" should displayed on Clear status input box
     When user clicks on "1 hour" option
     Then "1 hour" should displayed on Clear status input box
+
+  @wip
+  Scenario Outline: User can set every online status by clicking on them.
+
+    When user clicks on "<online options>" online option
+    Then "<online options>" should be displayed under profile icon dropdown
+
+    Examples:
+      | online options |
+      | online         |
+      | away           |
+      | invisible      |
+      | dnd            |
+
+
 
 
 
