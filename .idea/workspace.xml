@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="New test case is added">
+    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="Last test case is added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/onlineStatusStepDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/OnlineStatus.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/OnlineStatus.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +283,28 @@
       <option name="project" value="LOCAL" />
       <updated>1646519630820</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Last test case is added">
+      <created>1646520737405</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1646520737405</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Last test case is added">
+      <created>1646520791149</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1646520791149</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Last test case is added">
+      <created>1646520835647</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1646520835647</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,6 +349,7 @@
     <MESSAGE value="list of webelemnts for clear status dropdown has been added" />
     <MESSAGE value="Some new changes" />
     <MESSAGE value="New test case is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="New test case is added" />
+    <MESSAGE value="Last test case is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last test case is added" />
   </component>
 </project>
