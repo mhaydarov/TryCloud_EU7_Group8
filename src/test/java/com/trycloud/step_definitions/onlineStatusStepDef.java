@@ -305,7 +305,7 @@ public class onlineStatusStepDef {
 
         onlineStatusPage.profileButton.click();
         String actualMessage = onlineStatusPage.setStatusButton.getText();
-        System.out.println("actualMessage = " + actualMessage);
+
 
         Assert.assertFalse("Verify that previous message id not displayed",actualMessage.equals(exampleMessage));
 
