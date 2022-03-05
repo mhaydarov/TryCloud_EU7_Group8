@@ -87,7 +87,7 @@ Feature: As a user, I should be able to change my online status and set a status
     When user clicks on "1 hour" option
     Then "1 hour" should displayed on Clear status input box
 
-  @wip
+
   Scenario Outline: User can set every online status by clicking on them.
 
     When user clicks on "<online options>" online option
@@ -99,6 +99,13 @@ Feature: As a user, I should be able to change my online status and set a status
       | away           |
       | invisible      |
       | dnd            |
+
+  @wip
+  Scenario: User can view and click "Set status message" button with the blue background to set status message
+
+    When user should insert "Example Message" into status message input box
+    And user should see and click on Set status message button
+    Then user should see "Example Message" on dashboard
 
 
 

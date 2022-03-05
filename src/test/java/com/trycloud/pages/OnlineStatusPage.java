@@ -37,6 +37,16 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//button[@class='action-item action-item--single header-close icon-close undefined undefined has-tooltip']")
     public WebElement closingCross;
 
+    @FindBy(xpath = "//button[@class='status-buttons__primary primary']")
+    public WebElement setStatusMessageButton;
+
+    @FindBy(xpath = "//button[@class='status-buttons__select']")
+    public WebElement clearStatusMessageButton;
+
+
+
+
+
 
 
 

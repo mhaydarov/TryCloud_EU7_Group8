@@ -7,8 +7,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
+import javax.swing.*;
 import java.util.List;
 
 public class onlineStatusStepDef {
@@ -238,6 +242,45 @@ public class onlineStatusStepDef {
         System.out.println("attributeOfDashboard = " + attributeOfDashboard);
 
         Assert.assertTrue("Verify that selected online status is displayed on dashboard",attributeOfDashboard.contains(expectedOnlineStatus));
+
+
+    }
+
+    @When("user should insert {string} into status message input box")
+    public void user_should_insert_into_status_message_input_box(String exampleMessage) {
+
+        WebUtilities.waitFor(3);
+
+
+        new Actions(Driver.get()).doubleClick(onlineStatusPage.setStatusMessageInputBox).perform();
+        onlineStatusPage.setStatusMessageInputBox.sendKeys(exampleMessage);
+
+
+    }
+
+    @When("user should see and click on Set status message button")
+    public void user_should_see_and_click_on_Set_status_message_button() {
+        WebUtilities.waitFor(3);
+        Assert.assertTrue("Verify that set status message is displayed",onlineStatusPage.setStatusMessageButton.isDisplayed());
+
+        WebUtilities.waitFor(2);
+
+        onlineStatusPage.setStatusMessageButton.click();
+
+    }
+
+    @Then("user should see {string} on dashboard")
+    public void user_should_see_on_dashboard(String settedExampleMessage) {
+        WebUtilities.waitFor(3);
+
+        onlineStatusPage.profileButton.click();
+
+        String actualExampleMessage = onlineStatusPage.setStatusButton.getText();
+
+
+
+        Assert.assertTrue("Verify that setted example message is displayed on profile menu",actualExampleMessage.equals(settedExampleMessage));
+
 
 
     }
