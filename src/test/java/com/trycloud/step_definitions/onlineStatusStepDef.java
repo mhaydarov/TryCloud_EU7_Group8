@@ -183,14 +183,43 @@ public class onlineStatusStepDef {
 
         }
 
-        System.out.println(expectedOption);
-        System.out.println(actualOptions);
 
         Assert.assertTrue("Verify that clear status options are as ecpected and in same order",actualOptions.equals(expectedOption));
 
 
 
     }
+
+    @When("user clicks on {string} option")
+    public void user_clicks_on_option(String option) {
+        List<WebElement> clearStatusOption=onlineStatusPage.clearStatusDropDownOptions;
+        for (WebElement webElement : clearStatusOption) {
+            if(webElement.getAttribute("title").equals(option)){
+                onlineStatusPage.clearStatusDropDownButton.click();
+                webElement.click();
+
+            }
+
+        }
+
+    }
+
+    @Then("{string} should displayed on Clear status input box")
+    public void should_displayed_on_Clear_status_input_box(String option) {
+
+        WebUtilities.waitFor(3);
+        System.out.println(onlineStatusPage.recentClearStatusOption.getText());
+        try {
+            Assert.assertTrue("Verify that selected option is displayed on input box", onlineStatusPage.recentClearStatusOption.getText().equals(option));
+        }catch(Exception e){
+            System.out.println(e.getLocalizedMessage());
+        }
+
+    }
+
+
+
+
 
 
 

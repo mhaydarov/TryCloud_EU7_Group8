@@ -61,7 +61,7 @@ Feature: As a user, I should be able to change my online status and set a status
   Scenario: User can view the dropdown with the name "Clear status after" to select clear time range
     Then user should see clear selection dropdown near the  "Clear status after" name
 
-    @wip
+
   Scenario: User can view the clear selection option after clicking dropdown at the same order as "Don't clear,30 minutes, 1 hour, 4 hours, Today, This week"
     When user clicks on Clear status after dropdown
     Then user should see following Clear status options
@@ -71,3 +71,23 @@ Feature: As a user, I should be able to change my online status and set a status
       | 4 hours     |
       | Today       |
       | This week   |
+
+  @wip
+  Scenario: User can click every selection for clear time
+    When user clicks on "Don't clear" option
+    Then "Don't clear" should displayed on Clear status input box
+    When user clicks on "30 minutes" option
+    Then "30 minutes" should displayed on Clear status input box
+    When user clicks on "4 hours" option
+    Then "4 hours" should displayed on Clear status input box
+    When user clicks on "Today" option
+    Then "Today" should displayed on Clear status input box
+    When user clicks on "This week" option
+    Then "This week" should displayed on Clear status input box
+    When user clicks on "1 hour" option
+    Then "1 hour" should displayed on Clear status input box
+
+
+
+
+
