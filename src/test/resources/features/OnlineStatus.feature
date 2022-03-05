@@ -7,7 +7,7 @@ Feature: As a user, I should be able to change my online status and set a status
     When user clicks on profile Icon at the right corner of Dashboard page
     And user clicks on recent online status button
 
-
+  @wip
   Scenario: User should be able to reach Online Status module by clicking on recent status at the profile icon dropdown at Dashboard
 
     Then user should see recent status is displayed under profile dropdown
@@ -58,6 +58,6 @@ Feature: As a user, I should be able to change my online status and set a status
     |Out sick|Today|
     |Vacationing|Don't clear|
 
-  @wip
+
   Scenario: User can view the dropdown with the name "Clear status after" to select clear time range
     Then user should see clear selection dropdown near the  "Clear status after" name
