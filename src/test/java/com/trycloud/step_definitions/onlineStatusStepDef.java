@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class onlineStatusStepDef {
 
     OnlineStatusPage onlineStatusPage=new OnlineStatusPage();
@@ -153,6 +155,38 @@ public class onlineStatusStepDef {
         Assert.assertTrue("Verify that the message is as expected", actualClearStatusMessage.equals(expectedClearStatusMessage));
         Assert.assertTrue("Verify clear status message dropdown is displayed",onlineStatusPage.clearStatusDropDown.isDisplayed());
 
+
+
+
+    }
+    @When("user clicks on Clear status after dropdown")
+    public void user_clicks_on_Clear_status_after_dropdown() {
+        WebUtilities.waitForVisibility(onlineStatusPage.clearStatusDropDownButton,10);
+        onlineStatusPage.clearStatusDropDownButton.click();
+
+
+    }
+
+    @Then("user should see following Clear status options")
+    public void user_should_see_following_Clear_status_options(List<String> expectedClearStatusDropDownOptions) {
+
+        String expectedOption="";
+        String actualOptions="";
+
+        for (String expectedClearStatusDropDownOption : expectedClearStatusDropDownOptions) {
+            expectedOption+=expectedClearStatusDropDownOption;
+        }
+
+        for (int i = 0; i < onlineStatusPage.clearStatusDropDownOptions.size(); i++) {
+
+            actualOptions+=onlineStatusPage.clearStatusDropDownOptions.get(i).getAttribute("title");
+
+        }
+
+        System.out.println(expectedOption);
+        System.out.println(actualOptions);
+
+        Assert.assertTrue("Verify that clear status options are as ecpected and in same order",actualOptions.equals(expectedOption));
 
 
 

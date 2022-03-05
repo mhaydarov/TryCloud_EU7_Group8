@@ -25,8 +25,11 @@ public class OnlineStatusPage extends BasePage{
     @FindBy(xpath = "//input[@class='multiselect__input']")
     public WebElement clearStatusDropDown;
 
-    @FindBy(xpath = "//li[@class='multiselect__element']")
+    @FindBy(xpath = "//div[@class='name-parts']")
     public List<WebElement> clearStatusDropDownOptions;
+
+    @FindBy(xpath = "//div[@class='multiselect__tags']")
+    public WebElement clearStatusDropDownButton;
 
 
 

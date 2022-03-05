@@ -7,7 +7,7 @@ Feature: As a user, I should be able to change my online status and set a status
     When user clicks on profile Icon at the right corner of Dashboard page
     And user clicks on recent online status button
 
-  @wip
+
   Scenario: User should be able to reach Online Status module by clicking on recent status at the profile icon dropdown at Dashboard
 
     Then user should see recent status is displayed under profile dropdown
@@ -44,20 +44,30 @@ Feature: As a user, I should be able to change my online status and set a status
     Then Status Message input box should be interactable and user should be able to insert "Message" into it
 
 
-
   Scenario Outline: User can view default status message options in the same order as " In a meeting (bold and calendar icon beside it ) an hour(pale), Commuting(bold and bus icon beside it) - 30 minutes(pale), Working remotely(bold and building icon beside it)-Today(pale), Out sick(bold and sick emoji beside it) Today(pale), Vacationing(bold and tree emoji beside it)-Don't clear(pale)"
 
     Then user should see "<main message>" and "<side message>" near to it
 
     Examples:
 
-    |main message|side message|
-    |In a meeting|an hour|
-    |Commuting|30 minutes|
-    |Working remotely|Today|
-    |Out sick|Today|
-    |Vacationing|Don't clear|
+      | main message     | side message |
+      | In a meeting     | an hour      |
+      | Commuting        | 30 minutes   |
+      | Working remotely | Today        |
+      | Out sick         | Today        |
+      | Vacationing      | Don't clear  |
 
 
   Scenario: User can view the dropdown with the name "Clear status after" to select clear time range
     Then user should see clear selection dropdown near the  "Clear status after" name
+
+    @wip
+  Scenario: User can view the clear selection option after clicking dropdown at the same order as "Don't clear,30 minutes, 1 hour, 4 hours, Today, This week"
+    When user clicks on Clear status after dropdown
+    Then user should see following Clear status options
+      | Don't clear |
+      | 30 minutes  |
+      | 1 hour      |
+      | 4 hours     |
+      | Today       |
+      | This week   |
