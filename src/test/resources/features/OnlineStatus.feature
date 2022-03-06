@@ -1,4 +1,4 @@
-@wip
+
 Feature: As a user, I should be able to change my online status and set a status message
 
   Background:
@@ -73,7 +73,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | Today       |
       | This week   |
 
-
+@wip
   Scenario: User can click every selection for clear time
     When user clicks on "Don't clear" option
     Then "Don't clear" should displayed on Clear status input box
