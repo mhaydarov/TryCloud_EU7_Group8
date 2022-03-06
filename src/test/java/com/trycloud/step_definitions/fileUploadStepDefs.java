@@ -34,6 +34,7 @@ public class fileUploadStepDefs {
 
     //names
     String docName;
+    String defaultDoc;
 
 
     //folder creations
@@ -349,6 +350,7 @@ public class fileUploadStepDefs {
 
         System.out.println("=========the new doc opens automatically==========");
 
+        docName = docName+".md";
 
     }
 
@@ -370,7 +372,7 @@ public class fileUploadStepDefs {
 
         System.out.println("=========Creating new default doc==========");
 
-        docName = defaultDoc;
+        this.defaultDoc = defaultDoc;
 
         filesPage.buttonNew.click();
         WebUtilities.waitFor(1);
@@ -414,6 +416,10 @@ public class fileUploadStepDefs {
     public void user_should_see_the_new_doc_file_opened() {
 
         //Get expected info
+        String expectedFullDoc = docName;
+
+        System.out.println("expectedFullDoc = " + expectedFullDoc);
+
         String expectedFileName = docName.split("\\.")[0];
         String expectedFileType = docName.split("\\.")[1];
 
@@ -421,13 +427,14 @@ public class fileUploadStepDefs {
         System.out.println("expectedFileType = " + expectedFileType);
 
         //Get actual info
-        String [] actualFullDoc = filesPage.docTitle.getText().split("\\.");
+        String[] actualFullDoc = filesPage.docTitle.getText().split("\\.");
         String actualFileName = actualFullDoc[0];
         String actualFileType = actualFullDoc[1];
 
         System.out.println("actualFileName = " + actualFileName);
         System.out.println("actualFileType = " + actualFileType);
 
+        //Assert
         Assert.assertEquals(expectedFileName,actualFileName);
         Assert.assertEquals(expectedFileType,actualFileType);
 
