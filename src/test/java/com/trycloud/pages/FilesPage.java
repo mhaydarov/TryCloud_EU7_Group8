@@ -92,7 +92,7 @@ public class FilesPage extends BasePage{
         return Integer.parseInt(newStorageSize[0]);
     }
 
-    public String createDoc(String docname){
+    public String createFolder(String foldername){
         WebUtilities.waitFor(2);
 
         System.out.println("=========Creating new doc==========");
@@ -107,7 +107,35 @@ public class FilesPage extends BasePage{
 
         }
 
+        buttonNew.click();
+        WebUtilities.waitFor(1);
 
+        createFolderButton.click();
+        WebUtilities.waitFor(2);
+
+        inputFolder.clear();
+
+        inputFolder.sendKeys(foldername + Keys.ENTER);
+
+        WebUtilities.waitFor(2);
+
+        return foldername;
+    }
+
+    public String createDoc(String docname){
+        WebUtilities.waitFor(2);
+
+        System.out.println("=========Creating new doc==========");
+
+        try {
+            if(plusBubble.getAttribute("style").equals("display: block;")){
+                buttonNew.click();
+                WebUtilities.waitFor(1);
+            }
+        }
+        catch (NoSuchElementException ex){
+
+        }
 
         buttonNew.click();
         WebUtilities.waitFor(1);

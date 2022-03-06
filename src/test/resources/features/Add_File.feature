@@ -43,14 +43,11 @@ Feature:User should be able to upload a file
       | char limit | 21 |
     Then user should should see "File name exceeds the char limit" warning message and the file should not upload
 
-
-  Scenario: Creating two folders with duplicate names
-    When user clicks + button and tries to create "test123" and "test123" folders
-    Then user should should see "test123 already exists" warning message
-
-
-  Scenario: Creating two folders with duplicate names (case sensitive) and one with empty name
-    When user clicks + button and tries to create "test123" and "Test123" folders
+  @wip
+  Scenario: Creating folders with duplicate names (case sensitive) or empty name
+    When user clicks + button and tries to create "test1" and "test1" folders
+    Then user should should see "test1 already exists" warning message
+    When user clicks + button and tries to create "test2" and "Test2" folders
     Then user should see both folders on the screen
     When user clicks + button and tries to create folder with empty name
     Then user should should see "File name cannot be empty." warning message
@@ -67,7 +64,7 @@ Feature:User should be able to upload a file
     Then user should see the new doc file opened
 
 
-  Scenario: Creating two docs with duplicate names (case sensitive) and one with empty name
+  Scenario: Creating docs with duplicate names (case sensitive) or empty name
     When user clicks + button and tries to create "test1.md" and "test1.md" doc files
     Then user should should see "test1.md already exists" warning message
     When user clicks + button and tries to create "test2.md" and "Test2.md" doc files
