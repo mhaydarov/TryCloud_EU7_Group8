@@ -220,35 +220,10 @@ public class fileUploadStepDefs {
     @When("user clicks + button and tries to create {string} and {string} folders")
     public void user_clicks_button_and_tries_to_create_and_folders(String folder1, String folder2) {
 
-//        this.folder1 = folder1;
-//        this.folder2 = folder2;
-
         this.folder1 = filesPage.createFolder(folder1);
 
         this.folder2 = filesPage.createFolder(folder2);
-
-
-//        WebUtilities.waitFor(2);
-//
-////        System.out.println("=========Creating new folder==========");
-//
-//        filesPage.buttonNew.click();
-//        WebUtilities.waitFor(1);
-//        filesPage.createFolderButton.click();
-//        WebUtilities.waitFor(1);
-//
-//        filesPage.inputFolder.sendKeys(folder1 + Keys.ENTER);
-//
-//        WebUtilities.waitFor(2);
-//
-//        filesPage.buttonNew.click();
-//        WebUtilities.waitFor(1);
-//        filesPage.createFolderButton.click();
-//        WebUtilities.waitFor(1);
-//
-//        filesPage.inputFolder.sendKeys(folder2 + Keys.ENTER);
-//
-//        WebUtilities.waitFor(2);
+        
 
     }
 
