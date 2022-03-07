@@ -332,6 +332,8 @@ public class fileUploadStepDefs {
 
         docName = docName+".md";
 
+        defaultDoc = docName;
+
     }
 
     @When("User clicks + button and creates a doc and navigates into it")
@@ -396,12 +398,12 @@ public class fileUploadStepDefs {
     public void user_should_see_the_new_doc_file_opened() {
 
         //Get expected info
-        String expectedFullDoc = docName;
+        String expectedFullDoc = defaultDoc;
 
         System.out.println("expectedFullDoc = " + expectedFullDoc);
 
-        String expectedFileName = docName.split("\\.")[0];
-        String expectedFileType = docName.split("\\.")[1];
+        String expectedFileName = defaultDoc.split("\\.")[0];
+        String expectedFileType = defaultDoc.split("\\.")[1];
 
         System.out.println("expectedFileName = " + expectedFileName);
         System.out.println("expectedFileType = " + expectedFileType);
