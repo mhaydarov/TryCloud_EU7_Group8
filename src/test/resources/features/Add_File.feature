@@ -11,21 +11,21 @@ Feature:User should be able to upload a file
   @CLOUD-298
   Scenario: Uploading valid files into the root folder
     When user clicks + button and uploads a file
-      | C:\\Users\\Merdan\\Desktop\\Test\\test123_file1.txt |
+      | src/test/resources/upload file samples/test123_file1.txt |
     Then the file should appear in that folder after being uploaded
     Then the storage size should change accordingly
 
   @CLOUD-299
   Scenario: Uploading invalid files into the root folder
     When user clicks + button and uploads a file
-      | C:\\Users\\Merdan\\Desktop\\Test\\test123_file2.exe |
+      | src/test/resources/upload file samples/test123_file2.exe |
     Then user should should see "File type not allowed" warning message and the file should not upload
 
   @CLOUD-300
   Scenario: Uploading multiple files into the root folder
     When user clicks + button and uploads files
-      | C:\\Users\\Merdan\\Desktop\\Test\\test123_file1.txt |
-      | C:\\Users\\Merdan\\Desktop\\Test\\test123_file3.txt |
+      | src/test/resources/upload file samples/test123_file1.txt |
+      | src/test/resources/upload file samples/test123_file3.txt |
     Then user should should see "Uploading multiple files not allowed" warning message and the file should not upload
 
   @CLOUD-301
@@ -33,7 +33,7 @@ Feature:User should be able to upload a file
     When user clicks + button and creates a folder and opens it
       | char limit | 20 |
     When user clicks + button and uploads a file
-      | C:\\Users\\Merdan\\Desktop\\Test\\test123_file1.txt |
+      | src/test/resources/upload file samples/test123_file1.txt |
     Then the file should appear in that folder after being uploaded
     Then the storage size should change accordingly
 

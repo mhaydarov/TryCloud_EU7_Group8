@@ -75,6 +75,8 @@ public class fileUploadStepDefs {
     @When("user clicks + button and uploads a file")
     public void user_clicks_button_and_uploads_a_file(String file) {
 
+        file = String.valueOf(new File(new File(file).getAbsolutePath()));
+
         WebUtilities.waitFor(2);
 
         originalStorageUsed = filesPage.checkStorage();
