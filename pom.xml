@@ -57,7 +57,6 @@
                     <runOrder>Alphabetical</runOrder>
                     <includes>
                         <include>**/*Runner.java</include>
-                        <include>**/*FailedTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>

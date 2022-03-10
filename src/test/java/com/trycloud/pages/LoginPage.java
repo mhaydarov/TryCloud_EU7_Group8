@@ -22,7 +22,7 @@ public class LoginPage extends BasePage{
     public void logIn(String username, String password){
         usernameInputBox.sendKeys(username);
         passwordInputBox.sendKeys(password);
-        WebUtilities.waitFor(2);
+
         loginButton.click();
 
 
