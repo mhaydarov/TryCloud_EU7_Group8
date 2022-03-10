@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="Last test case is added">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/upload file samples/test123_file1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/upload file samples/test123_file2.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/upload file samples/test123_file3.txt" afterDir="false" />
+    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="added upload files to project folders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/fileUploadStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/fileUploadStepDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Add_File.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Add_File.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/calendarDisplayFunctionality.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/calendarDisplayFunctionality.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,27 @@
       <recent name="C:\Users\Merdan\IdeaProjects\TryCloud_EU7_Group8\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Uploading valid files into the root folder">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Uploading multiple files into the root folder">
+    <configuration name="Scenario: Uploading multiple files into the root folder" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Add_File.feature" />
+      <option name="GLUE" value="com.trycloud.step_definitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="TryCloud_EU7_Group8" />
+      <option name="NAME_FILTER" value="^Uploading multiple files into the root folder$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Uploading multiple files into the root folder$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Uploading multiple files into the root folder" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Uploading valid files into the root folder" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Add_File.feature" />
@@ -112,9 +131,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
+        <item itemvalue="JUnit.Runner" />
         <item itemvalue="Cucumber Java.Scenario: Uploading valid files into the root folder" />
-        <item itemvalue="JUnit.Runner" />
-        <item itemvalue="JUnit.Runner" />
         <item itemvalue="JUnit.Runner" />
         <item itemvalue="JUnit.Runner" />
       </list>
@@ -346,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646523190130</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added upload files to project folders">
+      <created>1646950481251</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1646950481251</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -380,6 +406,7 @@
     <MESSAGE value="Some new changes" />
     <MESSAGE value="New test case is added" />
     <MESSAGE value="Last test case is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last test case is added" />
+    <MESSAGE value="added upload files to project folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="added upload files to project folders" />
   </component>
 </project>

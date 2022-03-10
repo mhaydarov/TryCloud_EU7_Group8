@@ -1,4 +1,4 @@
-@smoke
+@smokeMH
 Feature:User should be able to upload a file
 
   Background:

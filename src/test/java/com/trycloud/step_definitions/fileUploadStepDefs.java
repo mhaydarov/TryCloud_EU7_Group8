@@ -111,9 +111,9 @@ public class fileUploadStepDefs {
 
         for (int i = 0; i<files.size(); i++){
             if(i == files.size()-1){
-                pathAll = pathAll+files.get(i);
+                pathAll = pathAll+ new File(new File(files.get(i)).getAbsolutePath());
             } else {
-                pathAll = pathAll + files.get(i)+ "\n";
+                pathAll = pathAll + new File(new File(files.get(i)).getAbsolutePath())+ "\n";
             }
         }
 
