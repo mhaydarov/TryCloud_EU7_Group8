@@ -57,7 +57,7 @@ Feature:User should be able to upload a file
     When user clicks + button and creates a default doc file ("New text document.md")
     Then user should see the new doc file opened
 
-  @CLOUD-306  @smokeMH
+  @CLOUD-306 @smokeMH
   Scenario: Creating a doc file
     When user clicks + button and creates a doc file
       | char limit | 20 |
