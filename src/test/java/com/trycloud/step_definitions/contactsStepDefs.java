@@ -68,7 +68,6 @@ ContactsPage contactsPage =new ContactsPage();
     @When("user clicks on a random contact")
     public void user_clicks_on_a_random_contact() {
 
-
         contactsPage.selectContact("Aysoltan");
 
     }
@@ -83,14 +82,44 @@ ContactsPage contactsPage =new ContactsPage();
 
     @Then("user clicks on three dots on the right")
     public void user_clicks_on_three_dots_on_the_right() {
-       contactsPage.clickThreeDots();
+
+        contactsPage.clickThreeDots();
     }
 
     @Then("user clicks on Delete and selected contact disappears")
     public void user_clicks_on_Delete_and_selected_contact_disappears() {
         contactsPage.clickDeleteButton();
+        contactsPage.setDeleteMessage();
     }
 
+
+    @When("user clicks on a New Group button")
+    public void user_clicks_on_a_New_Group_button() {
+
+        contactsPage.clickNewGroup();
+    }
+
+    String name;
+    @Then("user creates new group {string}")
+    public void user_creates_new_group(String groupName) {
+
+        name=groupName;
+
+       contactsPage.newGroupBox.sendKeys(groupName);
+       WebUtilities.waitFor(2);
+       contactsPage.newGroupArrow.click();
+
+    }
+
+    @Then("user sees new group name on the list")
+    public void user_sees_new_group_name_on_the_list() {
+
+       WebUtilities.waitFor(2);
+        WebElement xpath=Driver.get().findElement(By.xpath("//*[@title='"+name+"']"));
+        Assert.assertEquals(name,xpath.getText());
+        System.out.println("xpath.getText() = " + xpath.getText());
+
+    }
 
 }
 

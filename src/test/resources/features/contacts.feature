@@ -1,4 +1,4 @@
-@contactsFunctionality
+@ContactsFunctionality
 Feature:Contacts Functionality
 	Background:
 
@@ -26,3 +26,11 @@ Feature:Contacts Functionality
 		And   user clicks on three dots on the right
 		Then  user clicks on Delete and selected contact disappears
 
+
+		@CLOUD-352
+		Scenario: Display group names
+			Given  user clicks on the Contacts module  on Dashboard page
+
+			When  user clicks on a New Group button
+			Then  user creates new group "abcd"
+			Then  user sees new group name on the list
