@@ -6,7 +6,7 @@ Feature: Create a new conversation in the Talk module
     Given the user is on the login page
     When user login with valid credentials
     Then user should be log in dashboard
-
+  @smoke
   Scenario: Basic user should be able to crate conversation in the Talk module
     When User Clicks on "Talk" button on the upper side of the page
     And User Click on + icon from the up left corner next toSearch converations or users input box

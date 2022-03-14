@@ -8,7 +8,7 @@ Feature:User should be able to upload a file
     When user navigates to "files" module
     Given the storage is empty
 
-  @CLOUD-298 @smokeMH
+  @CLOUD-298 @smoke
   Scenario: Uploading valid files into the root folder
     When user clicks + button and uploads a file
       | src/test/resources/upload file samples/test123_file1.txt |
@@ -28,7 +28,7 @@ Feature:User should be able to upload a file
       | src/test/resources/upload file samples/test123_file3.txt |
     Then user should should see "Uploading multiple files not allowed" warning message and the file should not upload
 
-  @CLOUD-301 @smokeMH
+  @CLOUD-301 @smoke
   Scenario: Creating a folder with valid name and uploading files into it
     When user clicks + button and creates a folder and opens it
       | char limit | 20 |
@@ -43,7 +43,7 @@ Feature:User should be able to upload a file
       | char limit | 21 |
     Then user should should see "File name exceeds the char limit" warning message and the file should not upload
 
-  @CLOUD-303 @smokeMH
+  @CLOUD-303 @smoke
   Scenario: Creating folders with duplicate names (case sensitive) or empty name
     When user clicks + button and tries to create "test1" and "test1" folders
     Then user should should see "test1 already exists" warning message
@@ -52,18 +52,18 @@ Feature:User should be able to upload a file
     When user clicks + button and tries to create folder with empty name
     Then user should should see "File name cannot be empty." warning message
 
-  @CLOUD-304 @smokeMH
+  @CLOUD-304 @smoke
   Scenario: Creating a default doc file
     When user clicks + button and creates a default doc file ("New text document.md")
     Then user should see the new doc file opened
 
-  @CLOUD-306 @smokeMH
+  @CLOUD-306 @smoke
   Scenario: Creating a doc file
     When user clicks + button and creates a doc file
       | char limit | 20 |
     Then user should see the new doc file opened
 
-  @CLOUD-307 @smokeMH
+  @CLOUD-307 @smoke
   Scenario: Creating docs with duplicate names (case sensitive) or empty name
     When user clicks + button and tries to create "test1.md" and "test1.md" doc files
     Then user should should see "test1.md already exists" warning message
