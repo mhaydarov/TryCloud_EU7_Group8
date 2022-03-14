@@ -8,7 +8,7 @@ Feature: As a user, I should be able to change my online status and set a status
     When user clicks on profile Icon at the right corner of Dashboard page
     And user clicks on recent online status button
 
-
+  @smoke
   Scenario: User should be able to reach Online Status module by clicking on recent status at the profile icon dropdown at Dashboard
 
     Then user should see recent status is displayed under profile dropdown
@@ -39,7 +39,7 @@ Feature: As a user, I should be able to change my online status and set a status
 
     Then user should see "What's your status?" message in message input box
 
-
+  @smoke
   Scenario: User can type status message in the input box.
 
     Then Status Message input box should be interactable and user should be able to insert "Message" into it
@@ -73,7 +73,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | Today       |
       | This week   |
 
-@wip
+  @smoke
   Scenario: User can click every selection for clear time
     When user clicks on "Don't clear" option
     Then "Don't clear" should displayed on Clear status input box
@@ -88,7 +88,7 @@ Feature: As a user, I should be able to change my online status and set a status
     When user clicks on "1 hour" option
     Then "1 hour" should displayed on Clear status input box
 
-
+  @smoke
   Scenario Outline: User can set every online status by clicking on them.
 
     When user clicks on "<online options>" online option
@@ -101,7 +101,7 @@ Feature: As a user, I should be able to change my online status and set a status
       | invisible      |
       | dnd            |
 
-
+  @smoke
   Scenario: User can view and click "Set status message" button with the blue background to set status message
 
     When user should insert "Example Message" into status message input box
@@ -109,7 +109,7 @@ Feature: As a user, I should be able to change my online status and set a status
     Then user should see "Example Message" on dashboard
 
 
-
+  @smoke
   Scenario: User can view  and click "Clear status message" button with the grey background to clear status message
     When user should insert "Example Message" into status message input box
     And user should see and click on Set status message button
