@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="" />
+    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="commit new changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Firat_HandsOn" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,26 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="TryCloud_EU7_Group8" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="TryCloud_EU7_Group8" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Runner" />
-        <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
         <item itemvalue="Cucumber Java.Scenario: Uploading valid files into the root folder" />
+        <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
         <item itemvalue="JUnit.Runner" />
-        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
       </list>
     </recent_temporary>
   </component>
