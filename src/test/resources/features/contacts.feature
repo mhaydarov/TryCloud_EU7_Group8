@@ -7,7 +7,7 @@ Feature:Contacts Functionality
 		And  the user is on the dashboard page
 
 
-	@CLOUD-268
+	@CLOUD-268 @smoke
 	Scenario: Creating new Contact
 		Given  user clicks on the Contacts module  on Dashboard page
 		    Then   new page opens with title Contacts
@@ -17,7 +17,7 @@ Feature:Contacts Functionality
 		    Then   user creates a new contact
 
 
-	@CLOUD-288
+	@CLOUD-288 @smoke
 	Scenario: Deleting a contact
 		Given  user clicks on the Contacts module  on Dashboard page
 
