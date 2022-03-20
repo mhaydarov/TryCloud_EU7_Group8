@@ -62,6 +62,29 @@ public class ContactsPage extends BasePage{
    @FindBy(xpath = "//li[@id='everyone']/*[2]/*[1]")
    public  WebElement allContactsNumber;
 
+
+
+   @FindBy(xpath = "//*[@title='+ New group']")
+   public  WebElement newGroupButton;
+
+   public void clickNewGroup(){
+      WebUtilities.waitFor(2);
+      newGroupButton.click();
+   }
+
+
+   @FindBy(xpath = "//input[@class='action-input__input focusable']")
+   public WebElement newGroupBox;
+
+
+   @FindBy(xpath = "//label[@class='action-input__label']")
+   public WebElement newGroupArrow;
+
+   public void clickArrow(){
+      newGroupArrow.click();
+   }
+
+
 public void clickThreeDots(){
    actionMenu.click();
 }
@@ -142,7 +165,7 @@ public void selectedContactDetails() {
 
 
 public  void setDeleteMessage(){
-   deleteMessage.click();
+   WebUtilities.waitFor(2);
    deleteMessage.getText();
 
    String expectedDeleteMessage=deleteMessage.getText();
