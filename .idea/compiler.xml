@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="TryCloud_EU7_Group8" options="--add-modules java.base" />
+      <module name="TryCloud_EU7_Group8" options="" />
     </option>
   </component>
 </project>

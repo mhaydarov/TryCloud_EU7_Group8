@@ -1,12 +1,20 @@
 package com.trycloud.step_definitions;
 
+import com.trycloud.pages.LoginPage;
+import com.trycloud.utilities.ConfigurationReader;
+import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.*;
 
 public class EditNeFileStepDefs {
+
+    LoginPage loginPage=new LoginPage();
+
     @Given("the user is on the home page")
     public void the_user_is_on_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Driver.get().get(ConfigurationReader.get("url"));
+        String username=ConfigurationReader.get("username");
+        String password=ConfigurationReader.get("password");
+        loginPage.logIn(username,password);
     }
 
     @When("user clicks the folder button right top of the dashboard page")
