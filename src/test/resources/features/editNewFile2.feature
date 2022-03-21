@@ -6,7 +6,7 @@ Feature: User should be able to add nw file
 
     Scenario: User should be click add file
       When user clicks the folder button right top of the dashboard page
-      And user clicks the plus sign at the "all files" page
+      And user clicks the plus sign at the all files page
       And select the upload file button
       Then verify the upload successfully achieved
 

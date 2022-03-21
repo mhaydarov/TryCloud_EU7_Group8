@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment="Existence of set status button has been tested">
+    <list default="true" id="cbe9ae61-83ec-44dd-8b64-7a977f90d0a2" name="Changes" comment=" I am on the stage">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/pages/EditNewFilesPages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/runners/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/EditNeFileStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/trycloud/step_definitions/EditNeFileStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/editNewFile2.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/editNewFile2.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Firat_HandsOn" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,6 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -131,7 +137,7 @@
         <item itemvalue="Cucumber Java.Scenario: Uploading valid files into the root folder" />
         <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
         <item itemvalue="JUnit.Runner" />
-        <item itemvalue="Cucumber Java.Scenario: Uploading multiple files into the root folder" />
+        <item itemvalue="Cucumber Java.Scenario: Uploading valid files into the root folder" />
       </list>
     </recent_temporary>
   </component>
