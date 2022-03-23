@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                   "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
         glue = "com/trycloud/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@new"
 
 )

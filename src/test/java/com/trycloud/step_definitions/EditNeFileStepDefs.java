@@ -6,6 +6,8 @@ import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import com.trycloud.utilities.WebUtilities;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class EditNeFileStepDefs {
 
@@ -22,28 +24,35 @@ public class EditNeFileStepDefs {
 
     @When("user clicks the folder button right top of the dashboard page")
     public void user_clicks_the_folder_button_right_top_of_the_dashboard_page() {
-        WebUtilities.waitFor(2);
+        WebUtilities.waitFor(3);
         editNewFilesPages.EditPageBtn.click();
 
     }
 
     @When("user clicks the plus sign at the all files page")
     public void user_clicks_the_plus_sign_at_the_all_files_page() {
-        WebUtilities.waitFor(2);
+        WebUtilities.waitFor(3);
         editNewFilesPages.PlusBtn.click();
     }
 
 
     @When("select the upload file button")
     public void select_the_upload_file_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        WebUtilities.waitFor(2);
+        editNewFilesPages.UpLoadFileOpt.click();
+
+        WebUtilities.waitFor(1);
+        editNewFilesPages.UpLoadFileOpt.sendKeys("Downloads\\BookIT.docx"+ Keys.ENTER);
+
+
     }
 
     @Then("verify the upload successfully achieved")
     public void verify_the_upload_successfully_achieved() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       WebUtilities.waitFor(2);
+        editNewFilesPages.Verifyfile();
+       
     }
 
     @When("user clicks the three dots of the selected folder or file")
